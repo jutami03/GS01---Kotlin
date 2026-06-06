@@ -13,7 +13,9 @@ import br.com.example.gs01.ui.components.LogoAnimado
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen(onNavigateToStart: () -> Unit) {
+fun SplashScreen(
+    onNavigateToStart: () -> Unit
+) {
     LaunchedEffect(Unit) {
         delay(6000)
         onNavigateToStart()
