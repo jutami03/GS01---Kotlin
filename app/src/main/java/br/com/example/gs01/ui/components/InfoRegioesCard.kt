@@ -21,6 +21,7 @@ import br.com.example.gs01.model.getAllInfoRegioes
 @Composable
 fun InfoRegioesCardList(
     infoRegioes: InfoRegioes,
+    onClick: () -> Unit
 ) {
     Card(
         modifier = Modifier

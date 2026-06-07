@@ -1,5 +1,6 @@
 package br.com.example.gs01.model
 
+import androidx.compose.material.icons.Icons
 import br.com.example.gs01.repository.regiao1
 import br.com.example.gs01.repository.regiao2
 import br.com.example.gs01.repository.regiao3

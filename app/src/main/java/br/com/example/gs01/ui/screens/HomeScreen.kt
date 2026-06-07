@@ -26,6 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.example.gs01.model.InfoRegioes
 import br.com.example.gs01.model.getAllInfoRegioes
 import br.com.example.gs01.repository.getAllRegioes
 import br.com.example.gs01.repository.getInfosBy
@@ -36,6 +37,7 @@ import br.com.example.gs01.ui.components.UrbanFarmTopBar
 @Composable
 fun HomeScreen(
     onAboutClick: () -> Unit,
+    onInfoRegioesClick: (InfoRegioes) -> Unit,
 ) {
     var regioesState by remember { mutableStateOf(getAllRegioes()) }
     var infoRegioesState by remember { mutableStateOf(getAllInfoRegioes()) }
@@ -78,7 +80,10 @@ fun HomeScreen(
             LazyColumn(modifier =
                 Modifier.fillMaxWidth().padding(8.dp)) {
                 items(infoRegioesState) { info ->
-                    InfoRegioesCardList(info)
+                    InfoRegioesCardList(
+                        info,
+                        onClick = { onInfoRegioesClick(info)}
+                    )
                 }
             }
         }
@@ -90,7 +95,8 @@ fun HomeScreen(
 fun HomeScreenPreview() {
     Surface(modifier = Modifier.fillMaxSize()) {
         HomeScreen(
-            onAboutClick = {}
+            onAboutClick = {},
+            onInfoRegioesClick = {}
         )
     }
 }

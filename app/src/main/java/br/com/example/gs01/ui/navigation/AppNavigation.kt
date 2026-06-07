@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.example.gs01.ui.screens.AboutScreen
 import br.com.example.gs01.ui.screens.HomeScreen
+import br.com.example.gs01.ui.screens.PoluicaoScreen
 import br.com.example.gs01.ui.screens.SplashScreen
 import br.com.example.gs01.ui.screens.TemperaturaScreen
 
@@ -33,7 +34,9 @@ fun AppNavigation() {
 
         composable<HomeRoute> {
             HomeScreen(
-                onAboutClick = {navController.navigate(SobreRoute)}
+                onAboutClick = {navController.navigate(SobreRoute)},
+                onInfoRegioesClick = { navController.navigate(TemperaturaRoute)
+                }
             )
         }
 
@@ -49,6 +52,12 @@ fun AppNavigation() {
 
         composable<TemperaturaRoute> {
             TemperaturaScreen {
+                navController.popBackStack()
+            }
+        }
+
+        composable<PoluicaoRoute> {
+            PoluicaoScreen {
                 navController.popBackStack()
             }
         }
