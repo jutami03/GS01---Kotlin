@@ -44,8 +44,7 @@ fun TemperaturaScreen(
 
                 items(urbanFarmZonas) { maxima ->
                     ZonasCard(
-                        zonas = maxima,
-                        onClick = {}
+                        zonas = maxima
                     )
                 }
             }

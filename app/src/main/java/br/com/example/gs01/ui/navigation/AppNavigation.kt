@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import br.com.example.gs01.ui.screens.AboutScreen
 import br.com.example.gs01.ui.screens.HomeScreen
 import br.com.example.gs01.ui.screens.SplashScreen
+import br.com.example.gs01.ui.screens.TemperaturaScreen
 
 @Composable
 fun AppNavigation() {
@@ -44,6 +45,12 @@ fun AppNavigation() {
 
         composable<ClimaRoute> {
 
+        }
+
+        composable<TemperaturaRoute> {
+            TemperaturaScreen {
+                navController.popBackStack()
+            }
         }
     }
 }

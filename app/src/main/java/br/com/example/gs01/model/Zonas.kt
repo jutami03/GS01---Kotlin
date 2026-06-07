@@ -8,6 +8,5 @@ data class Zonas (
     val title: String,
     val maxima: String,
     val minima: String,
-    val description: String,
     val category: ZonasCategory
 )

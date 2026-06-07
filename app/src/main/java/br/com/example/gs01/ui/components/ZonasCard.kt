@@ -25,16 +25,11 @@ import br.com.example.gs01.model.Zonas
 
 @Composable
 fun ZonasCard (
-    zonas: Zonas,
-    onClick: () -> Unit
+    zonas: Zonas
 ) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable { onClick() },
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 4.dp
-        )
     ) {
 
         Column(
