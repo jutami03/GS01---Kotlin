@@ -1,8 +1,6 @@
 package br.com.example.gs01.ui.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.navigation.NavHost
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -37,10 +35,12 @@ fun AppNavigation() {
             HomeScreen(
                 onAboutClick = {navController.navigate(SobreRoute)},
                 onInfoRegioesClick = { info ->
-                    when (info.info.lowercase()) {
-                        "temperatura" -> navController.navigate(TemperaturaRoute)
-                        "clima" -> navController.navigate(ClimaRoute)
-                        "poluição", "poluicao" -> navController.navigate(PoluicaoRoute)
+                    val textoCard = info.info.trim().lowercase()
+
+                    when  {
+                        textoCard == "temperatura" -> navController.navigate(TemperaturaRoute)
+                        textoCard == "clima" -> navController.navigate(ClimaRoute)
+                        textoCard.contains("polu") -> navController.navigate(PoluicaoRoute)
                     }
                 }
             )

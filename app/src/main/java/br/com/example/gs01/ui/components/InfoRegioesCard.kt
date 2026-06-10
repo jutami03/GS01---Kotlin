@@ -1,6 +1,7 @@
 package br.com.example.gs01.ui.components
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -26,7 +27,8 @@ fun InfoRegioesCardList(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 8.dp),
+            .padding(bottom = 8.dp)
+            .clickable{onClick()},
         colors = CardDefaults.cardColors(
             containerColor =
                 MaterialTheme.colorScheme.surface
