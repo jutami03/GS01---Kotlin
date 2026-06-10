@@ -33,7 +33,7 @@ fun AboutScreen(
             .padding(20.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)) {
             Text(
-                text = "O que é o DevSpace?",
+                text = "O que é o UrbanFarms?",
                 style = MaterialTheme.typography.headlineMedium
             )
 
